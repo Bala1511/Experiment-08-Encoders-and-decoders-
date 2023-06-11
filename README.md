@@ -62,9 +62,34 @@ D7 = X Y Z
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: BALA MURUGAN P
+RegisterNumber:  212222230017
 */
+ENCODER
+```
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+DE CODER
+```
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
 
 
 
@@ -72,7 +97,13 @@ RegisterNumber:
 
 
 ### RTL LOGIC  
+ENCODER
 
+![encoder](https://github.com/Bala1511/Experiment-08-Encoders-and-decoders-/assets/118680410/f21deeff-48be-46fd-be22-bfb04ebbc97b)
+
+DECODER
+
+![decoder](https://github.com/Bala1511/Experiment-08-Encoders-and-decoders-/assets/118680410/9e41e51d-33c2-4e1f-8477-1234f54c5734)
 
 
 
@@ -81,16 +112,29 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+ENCODER
 
+![encoder1](https://github.com/Bala1511/Experiment-08-Encoders-and-decoders-/assets/118680410/267df5df-9c95-46f7-8dd1-5584a9742bdf)
+
+DECODER
+
+![decoder1](https://github.com/Bala1511/Experiment-08-Encoders-and-decoders-/assets/118680410/0d97d20c-e5c6-4dd4-90cd-0d03e6602b7c)
 
 
 
 
 ### TRUTH TABLE 
 
+ENCODER
+![encoder2](https://github.com/Bala1511/Experiment-08-Encoders-and-decoders-/assets/118680410/4a3269f3-e466-4bdb-a9d1-2c04beeffd11)
+
+DECODER
+
+![decodre2](https://github.com/Bala1511/Experiment-08-Encoders-and-decoders-/assets/118680410/642f6846-7f1a-4133-8126-909b806a9597)
 
 
 
 
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is done.
